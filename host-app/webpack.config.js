@@ -15,7 +15,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    publicPath: process.env.REMOTE_HOST_URL ? (process.env.REMOTE_HOST_URL.endsWith('/') ? process.env.REMOTE_HOST_URL : process.env.REMOTE_HOST_URL + '/') : 'auto',
+    publicPath: 'auto',
     path: path.resolve(__dirname, 'build'),
   },
   module: {
@@ -39,8 +39,8 @@ module.exports = {
       name: 'host',
       filename: 'remoteEntry.js',
       remotes: {
-        chat: `chat@${(process.env.REMOTE_CHAT_URL || 'http://localhost:3001').replace(/^(?!https?:\/\/)/, 'https://').replace(/\/$/, '')}/remoteEntry.js`,
-        email: `email@${(process.env.REMOTE_EMAIL_URL || 'http://localhost:3002').replace(/^(?!https?:\/\/)/, 'https://').replace(/\/$/, '')}/remoteEntry.js`,
+        chat: `chat@${process.env.REMOTE_CHAT_URL || 'http://localhost:3001'}/remoteEntry.js`,
+        email: `email@${process.env.REMOTE_EMAIL_URL || 'http://localhost:3002'}/remoteEntry.js`,
       },
       exposes: {
         './Button': './src/components/Button',
