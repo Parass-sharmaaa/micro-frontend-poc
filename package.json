@@ -1,0 +1,17 @@
+{
+  "name": "micro-frontend-poc-root",
+  "private": true,
+  "workspaces": [
+    "host-app",
+    "chat-app",
+    "email-app",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "start:host": "cd host-app && npm start",
+    "start:chat": "cd chat-app && npm start",
+    "start:email": "cd email-app && npm start",
+    "build:all": "npm run build --workspaces"
+  }
+}
