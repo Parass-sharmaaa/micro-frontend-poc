@@ -38,9 +38,6 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'chat',
             filename: 'remoteEntry.js',
-            remotes: {
-                host: `host@${process.env.REMOTE_HOST_URL || 'http://localhost:3000'}/remoteEntry.js`,
-            },
             exposes: {
                 './ChatApp': './src/ChatApp',
                 './ChatWidget': './src/ChatWidget',

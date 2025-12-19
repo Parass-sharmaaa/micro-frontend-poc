@@ -38,9 +38,6 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'email',
             filename: 'remoteEntry.js',
-            remotes: {
-                host: `host@${process.env.REMOTE_HOST_URL || 'http://localhost:3000'}/remoteEntry.js`,
-            },
             exposes: {
                 './EmailApp': './src/EmailApp',
                 './EmailWidget': './src/EmailWidget',
