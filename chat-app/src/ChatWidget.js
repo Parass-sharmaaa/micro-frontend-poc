@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 
-// Remote Imports with Fallbacks
-const Button = React.lazy(() => import('host/Button').catch(() => ({ default: ({ children, ...props }) => <button {...props}>{children}</button> })));
-const Input = React.lazy(() => import('host/Input').catch(() => ({ default: (props) => <input {...props} /> })));
+// Local Imports
+import Button from './components/Button';
+import Input from './components/Input';
 
 const ChatWidget = () => {
     const [messages, setMessages] = useState(() => {
