@@ -1,9 +1,18 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "src": "/remoteEntry.js", "dest": "/remoteEntry.js" },
-    { "src": "/(.*).js", "dest": "/$1.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+        {
+            "source": "/remoteEntry.js",
+            "destination": "/remoteEntry.js"
+        },
+        {
+            "source": "/(.*).js",
+            "destination": "/$1.js"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
 }

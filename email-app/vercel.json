@@ -3,16 +3,16 @@
     "trailingSlash": false,
     "rewrites": [
         {
-            "src": "/remoteEntry.js",
-            "dest": "/remoteEntry.js"
+            "source": "/remoteEntry.js",
+            "destination": "/remoteEntry.js"
         },
         {
-            "src": "/(.*).js",
-            "dest": "/$1.js"
+            "source": "/(.*).js",
+            "destination": "/$1.js"
         },
         {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
