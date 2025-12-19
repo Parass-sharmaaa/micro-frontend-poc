@@ -15,7 +15,7 @@ module.exports = {
         historyApiFallback: true,
     },
     output: {
-        publicPath: 'auto',
+        publicPath: process.env.REMOTE_EMAIL_URL ? (process.env.REMOTE_EMAIL_URL.endsWith('/') ? process.env.REMOTE_EMAIL_URL : process.env.REMOTE_EMAIL_URL + '/') : 'auto',
         path: path.resolve(__dirname, 'build'),
     },
     module: {
@@ -39,7 +39,7 @@ module.exports = {
             name: 'email',
             filename: 'remoteEntry.js',
             remotes: {
-                host: `host@${(process.env.REMOTE_HOST_URL || 'http://localhost:3000').replace(/^(?!https?:\/\/)/, 'https://')}/remoteEntry.js`,
+                host: `host@${(process.env.REMOTE_HOST_URL || 'http://localhost:3000').replace(/^(?!https?:\/\/)/, 'https://').replace(/\/$/, '')}/remoteEntry.js`,
             },
             exposes: {
                 './EmailApp': './src/EmailApp',
