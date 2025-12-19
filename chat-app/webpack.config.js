@@ -39,7 +39,7 @@ module.exports = {
             name: 'chat',
             filename: 'remoteEntry.js',
             remotes: {
-                host: `host@${process.env.REMOTE_HOST_URL || 'http://localhost:3000'}/remoteEntry.js`,
+                host: `host@${(process.env.REMOTE_HOST_URL || 'http://localhost:3000').replace(/^(?!https?:\/\/)/, 'https://')}/remoteEntry.js`,
             },
             exposes: {
                 './ChatApp': './src/ChatApp',
