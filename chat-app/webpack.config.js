@@ -16,6 +16,7 @@ module.exports = {
     },
     output: {
         publicPath: 'auto',
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
