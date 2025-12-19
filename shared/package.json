@@ -1,0 +1,18 @@
+{
+    "name": "@mfe/shared",
+    "version": "1.0.0",
+    "description": "Shared configuration and styles for micro-frontend apps",
+    "main": "index.js",
+    "keywords": [
+        "tailwind",
+        "design-system",
+        "micro-frontend"
+    ],
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.18",
+        "autoprefixer": "^10.4.23",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.18",
+        "tailwindcss-animate": "^1.0.7"
+    }
+}

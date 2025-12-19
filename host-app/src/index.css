@@ -1,0 +1,59 @@
+@reference "tailwindcss";
+@tailwind base;
+/* Force Rebuild */
+@tailwind components;
+@tailwind utilities;
+
+/* Import shared design tokens */
+@import "../../shared/styles/design-tokens.css";
+
+/* Global Scroll Handling */
+@layer base {
+
+
+  html,
+  body,
+  #root,
+  .app-container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  a,
+  button {
+    text-decoration: none !important;
+  }
+}
+
+/* Custom scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.slate.200');
+  border-radius: 9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.slate.700');
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.slate.300');
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.slate.600');
+  }
+}
